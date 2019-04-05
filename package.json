@@ -1,11 +1,14 @@
 {
   "scripts": {
-    "test:open": "cypress open",
-    "test:run": "cypress run"
+    "start-server": "http-server ./server -c-1 -p 51111",
+    "cypress:run": "cypress run",
+    "test": "start-server-and-test start-server http://localhost:51111 cypress:run"
   },
   "devDependencies": {
     "@cypress/webpack-preprocessor": "4.0.3",
     "cypress": "3.2.0",
+    "http-server": "0.11.1",
+    "start-server-and-test": "1.7.13",
     "ts-loader": "5.3.3",
     "typescript": "3.2.2",
     "webpack": "4.8.3",

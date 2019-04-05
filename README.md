@@ -1,15 +1,12 @@
-TypeScript Cypress Integration Test Demo
-=========================================
+TypeScript Cypress Test Start Server and Shutdown Demo
+========================================================
 
-注意点：
+关键就是用了[start-server-and-test](https://github.com/bahmutov/start-server-and-test)这个工具，
+它可以启动server，等待资源，运行测试，关闭server。
 
-1. `cypress/plugins/index.js`不能使用`.ts`，所以`webpack.config.js`也不能使用`.ts`
-2. 由于混用了`.js`与`.ts`，所以webpack中要设置`resolve`->`extensions`
-3. `tsconfig.json`中一定要设置`"types": [ "cypress" ]`，否则`cy`等typing找不到
+如果要等待多个资源，使用`|`把多个资源分开。
 
 ```
 npm install
-npm run test:open
-
-npm run test:run
+npm run test
 ```
